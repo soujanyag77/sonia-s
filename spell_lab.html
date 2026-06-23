@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Lab | PMSHRI Kendriya Vidyalaya</title>
+    <meta name="description" content="Enter the magical Spell Lab and master Python Dictionary methods by solving gamified CBSE Class 11/12 computer science challenges.">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page-title="meta.spellLab.title">
+
+    <div class="kvs-topbar">
+        <div class="container kvs-topbar-inner">
+            <span data-i18n="topbar.tagline">Kendriya Vidyalaya Sangathan · PM SHRI School · CBSE Affiliated</span>
+            <div class="lang-switcher" role="group" aria-label="Language">
+                <button type="button" class="lang-btn active" data-lang="en">English</button>
+                <button type="button" class="lang-btn" data-lang="hi">हिन्दी</button>
+            </div>
+        </div>
+        <div class="tricolor-stripe" aria-hidden="true"></div>
+    </div>
+
+    <header class="header header-dark-tint">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" id="header-logo-link">
+                <div class="logo-icon kvs-logo">KV</div>
+                <span class="logo-text"><span data-i18n="school.name">PMSHRI Kendriya Vidyalaya</span><span class="logo-sub">PM SHRI · KVS · CBSE</span></span>
+            </a>
+            <button class="hamburger" aria-label="Toggle Navigation" id="mobile-menu-btn"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navigation-menu-list">
+                <li class="nav-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li class="nav-item"><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                <li class="nav-item"><a href="academics.html" data-i18n="nav.academics">Academics</a></li>
+                <li class="nav-item"><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+                <li class="nav-item active"><a href="spell_lab.html" data-i18n="nav.spellLab">Spell Lab</a></li>
+                <li class="nav-item"><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                <li class="nav-btn"><a href="admissions.html" class="btn btn-secondary" data-i18n="nav.apply">Apply Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <!-- Title area -->
+        <div class="section-title-wrapper" style="margin-bottom: 2rem;">
+            <span class="section-tag" style="color: #c084fc;">Gamified CS Lab</span>
+            <h1 class="section-title" style="color: #fef3c7; text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);">Spell Lab: Dictionary Quest</h1>
+            <p class="section-subtitle" style="color: #a78bfa;">Step into the magical realm of Python dictionaries. Cast the correct method spells to solve CBSE K-12 board exam quests!</p>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-container animate-on-scroll" style="max-width: 800px; margin: 0 auto 2.5rem auto;">
+            <div class="progress-label-wrapper">
+                <span style="color: #c084fc;"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 0.5rem;"></i> Wizard Progress</span>
+                <span id="progress-percentage" style="color: #fb8500; font-weight: 800;">0%</span>
+            </div>
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" id="progress-meter-fill"></div>
+            </div>
+        </div>
+
+        <!-- Main Layout Split -->
+        <div class="spell-lab-layout">
+            <!-- Left Side: Quest Scroll -->
+            <div class="parchment-scroll animate-on-scroll" id="quest-card-scroll">
+                <div class="parchment-header">
+                    <span class="quest-meta" id="cbse-context">CBSE Class 11/12 CS Syllabus</span>
+                    <h2 class="parchment-title" id="quest-title">Quest 1: The Merchant's Search</h2>
+                </div>
+                
+                <div class="quest-instruction">
+                    <strong>Your Quest Task:</strong><br>
+                    <span id="quest-story-text">Help the magic merchant lookup prices without crashing the vault.</span>
+                </div>
+                
+                <div class="quest-story">
+                    <i class="fa-solid fa-quote-left" style="margin-right: 0.5rem; opacity: 0.5;"></i>
+                    <span id="story-details">In the wizard merchant registry, searching for keys that don't exist with basic syntax will cause a crash. Cast a safe lookup spell!</span>
+                </div>
+                
+                <!-- Python Code slot box -->
+                <div class="spell-code-box" id="code-template-box">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+                
+                <!-- Hint scroll board -->
+                <div class="quest-hint-box" id="hint-scroll-box">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Right Side: Terminal Output -->
+            <div class="magic-terminal animate-on-scroll" id="terminal-console-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                    <span class="terminal-title">Spell Compiler v1.2</span>
+                </div>
+                <div class="terminal-body" id="terminal-log-body">
+                    <!-- Logs printed line-by-line via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: Magic Chest Area -->
+        <div class="magic-chest-area animate-on-scroll" id="vault-chest-section">
+            <h2 class="magic-chest-instruction">Click the Royal Vault Chest to release the Dictionary Spell Cards</h2>
+            
+            <!-- Vault Chest -->
+            <div class="royal-chest" id="royal-vault-chest">
+                <div class="chest-lid">
+                    <div class="lid-strap lid-strap-left"></div>
+                    <div class="lid-strap lid-strap-right"></div>
+                </div>
+                <div class="chest-body">
+                    <div class="chest-glow"></div>
+                    <div class="chest-lock-plate">
+                        <div class="chest-keyhole"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spells inventory -->
+            <div class="spells-deck" id="vault-spells-deck">
+                <div class="spell-card" draggable="true" data-spell="get" id="spell-get">get</div>
+                <div class="spell-card" draggable="true" data-spell="update" id="spell-update">update</div>
+                <div class="spell-card" draggable="true" data-spell="pop" id="spell-pop">pop</div>
+                <div class="spell-card" draggable="true" data-spell="keys" id="spell-keys">keys</div>
+                <div class="spell-card" draggable="true" data-spell="values" id="spell-values">values</div>
+                <div class="spell-card" draggable="true" data-spell="items" id="spell-items">items</div>
+                <div class="spell-card" draggable="true" data-spell="clear" id="spell-clear">clear</div>
+            </div>
+            
+            <p style="color: #a78bfa; font-size: 0.9rem; margin-top: 1.5rem;">
+                <i class="fa-solid fa-mobile-screen-button" style="margin-right: 0.25rem;"></i> 
+                Mobile User Tip: If you cannot drag, tap a Spell Card to highlight it, then tap the empty dashed code slot to cast it!
+            </p>
+        </div>
+    </main>
+
+    <!-- Victory Overlay Modal -->
+    <div class="victory-overlay" id="victory-overlay">
+        <div class="victory-card">
+            <div class="victory-star"><i class="fa-solid fa-crown"></i></div>
+            <h2 class="victory-title">Quest Accomplished!</h2>
+            <div class="victory-badge">Python Mage</div>
+            <p class="victory-text">Congratulations, young wizard! You have correctly applied core Python Dictionary methods (<code>.get()</code>, <code>.update()</code>, and <code>.pop()</code>) to clear the CBSE Class 11/12 challenges. The Kingdom's code is safe once again!</p>
+            <button class="btn btn-secondary" style="padding-left: 2.5rem; padding-right: 2.5rem; font-weight: 800;" id="victory-close">Play Again <i class="fa-solid fa-rotate-left" style="margin-left: 0.5rem;"></i></button>
+        </div>
+    </div>
+
+        <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand" id="footer-brand-column">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon kvs-logo">KV</div>
+                        <span class="logo-text" style="color: var(--color-text-light);"><span data-i18n="school.name">PMSHRI Kendriya Vidyalaya</span></span>
+                    </a>
+                    <p data-i18n="footer.tagline">Excellence in education and all-round development under Kendriya Vidyalaya Sangathan, nurturing responsible citizens of India.</p>
+                </div>
+                <div class="footer-col" id="footer-quicklinks-column">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="footer.aboutLink">About KV</a></li>
+                        <li><a href="academics.html" data-i18n="footer.academicsLink">Academic Programs</a></li>
+                        <li><a href="admissions.html" data-i18n="footer.admissionsLink">Admission Details</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contactLink">Contact & Location</a></li>
+                        <li><a href="spell_lab.html" data-i18n="footer.spellLabLink">Spell Lab</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="footer-info-column">
+                    <h3 data-i18n="footer.information">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.calendar">Academic Calendar</a></li>
+                        <li><a href="#" data-i18n="footer.portal">Student & Parent Portal</a></li>
+                        <li><a href="#" data-i18n="footer.careers">Career Opportunities</a></li>
+                        <li><a href="#" data-i18n="footer.alumni">Alumni Community</a></li>
+                        <li><a href="#" data-i18n="footer.safety">Safety & Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="footer-contact-column">
+                    <h3 data-i18n="footer.contactUs">Contact Us</h3>
+                    <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="footer.address">PM SHRI Kendriya Vidyalaya, Sector 12, New Delhi â€“ 110075, India</span></div>
+                    <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span data-i18n="footer.phone">+91 (11) 4567-8900</span></div>
+                    <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span data-i18n="footer.email">pmshrikv@kvs.gov.in</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom" id="footer-bottom-bar">
+                <p data-i18n="footer.copyright">&copy; 2026 PMSHRI Kendriya Vidyalaya. All rights reserved. | Kendriya Vidyalaya Sangathan</p>
+                <div class="footer-bottom-links">
+                    <a href="#" style="margin-right: 1.5rem;" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="main.js"></script>
+    <script src="spell_lab.js"></script>
+</body>
+</html>
